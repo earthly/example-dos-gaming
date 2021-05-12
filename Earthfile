@@ -89,14 +89,14 @@ secretagent:
         --build-arg GAME_TAG=secretagent \
         --build-arg GAME_URL=https://archive.org/download/SecretAgent_945/AGENT.ZIP \
         --build-arg GAME_ARGS=\"SAM1.EXE\" \
-        +play
+        +play-dark
 
 cosmo:
     BUILD \
         --build-arg GAME_TAG=cosmo \
         --build-arg GAME_URL=https://archive.org/download/CosmosCosmicAdventure/CosmosCosmicAdventure-ForbiddenPlanet-Adventure1Of3V1.20sw1992apogeeSoftwareLtd.action.zip \
         --build-arg GAME_ARGS=\"COSMO1.EXE\" \
-        +play
+        +play-dark
 
 doom:
     BUILD \
@@ -110,11 +110,11 @@ scorch:
         --build-arg GAME_TAG=scorch \
         --build-arg GAME_URL=https://archive.org/download/msdos_festival_SCORCH15/SCORCH15.ZIP \
         --build-arg GAME_ARGS=\"SCORCH.EXE\" \
-        +play
+        +play-dark
 
 keen:
     BUILD \
         --build-arg GAME_TAG=doom \
         --build-arg GAME_URL=https://image.dosgamesarchive.com/games/keen-shr.zip \
         --build-arg GAME_ARGS=\"KEEN.BAT\" \
-        +play
+        +play-dark
