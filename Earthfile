@@ -48,9 +48,22 @@ cosmo:
         +play
 
 doom:
-    ARG EARTHLY_TARGET
     BUILD \
         --build-arg GAME_TAG=doom \
         --build-arg GAME_URL=https://archive.org/download/DoomsharewareEpisode/doom.ZIP \
         --build-arg GAME_ARGS=\"DOOM.EXE\" \
+        +play
+
+scorch:
+    BUILD \
+        --build-arg GAME_TAG=scorch \
+        --build-arg GAME_URL=https://archive.org/download/msdos_festival_SCORCH15/SCORCH15.ZIP \
+        --build-arg GAME_ARGS=\"SCORCH.EXE\" \
+        +play
+
+keen:
+    BUILD \
+        --build-arg GAME_TAG=doom \
+        --build-arg GAME_URL=https://image.dosgamesarchive.com/games/keen-shr.zip \
+        --build-arg GAME_ARGS=\"KEEN.BAT\" \
         +play
