@@ -114,7 +114,7 @@ scorch:
 
 keen:
     BUILD \
-        --build-arg GAME_TAG=doom \
+        --build-arg GAME_TAG=keen \
         --build-arg GAME_URL=https://image.dosgamesarchive.com/games/keen-shr.zip \
         --build-arg GAME_ARGS=\"KEEN.BAT\" \
         +play-dark
