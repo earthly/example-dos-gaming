@@ -1,6 +1,7 @@
 
 jsdos:
     FROM node:16-alpine
+    
     WORKDIR site
     RUN wget https://js-dos.com/6.22/current/js-dos.js && \
         wget https://js-dos.com/6.22/current/wdosbox.js && \
@@ -9,6 +10,7 @@ jsdos:
 
 game:
     FROM +jsdos
+    
     ARG GAME_URL
     RUN wget -O game.zip $GAME_URL
 
@@ -16,7 +18,6 @@ web:
     FROM +game
 
     ARG GAME_ARGS
-
     COPY index.html .
     RUN sed -i s/GAME_ARGS/$GAME_ARGS/ index.html
 
@@ -26,12 +27,10 @@ play:
     LOCALLY
 
     ARG GAME_TAG
-
     WITH DOCKER --load jsdos:$GAME_TAG=+web
         RUN docker inspect jsdos:$GAME_TAG > /dev/null && \ #Using side-effect to save image locally too
             docker run --rm -p 127.0.0.1:8000:8000 jsdos:$GAME_TAG
     END
-
 
 secretagent:
     BUILD \
